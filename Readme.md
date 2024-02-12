@@ -31,7 +31,6 @@ saveData.js
 - 리스트 제목 클릭: 해당 리스트의 페이지 로드
 - title과 content input에 keyup 이벤트 발생: 리스트 제목 변경, localStorage에 데이터 저장 및 수정
 
-
 #### 🌱 참고
 
 https://velog.io/@gene028/notion-clone
