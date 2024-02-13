@@ -1,0 +1,423 @@
+* {
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    "Apple Color Emoji",
+    Arial,
+    sans-serif,
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+html,
+body {
+  margin: 0 0 0 0;
+  height: 100%;
+  font-size: 5px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.username {
+  margin: 10px;
+  font-size: small;
+  font-weight: 500;
+}
+
+.document {
+  color: #7e7c79;
+}
+
+.document-title {
+  padding-left: 10px;
+}
+
+.document-title:hover {
+  cursor: pointer;
+}
+
+.container {
+  height: 753px;
+}
+
+.document-list {
+  padding-left: 10px;
+}
+
+.document-element {
+  display: flex;
+  justify-content: space-between;
+}
+
+.document-list-container {
+  height: 1080px;
+  padding-top: 15px;
+  text-indent: 15px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  background: rgb(247, 246, 243);
+  transition: box-shadow 300ms ease-in 0s;
+  width: 200px;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+  /* align-items: center; */
+  overflow: auto;
+  margin-right: 0px;
+  margin-bottom: 0px;
+
+  padding-top: calc(96px + env(safe-area-inset-top));
+  padding-left: calc(96px + env(safe-area-inset-left));
+  padding-right: calc(96px + env(safe-area-inset-right));
+  padding-bottom: 30vh;
+}
+#app {
+  display: flex;
+  flex-direction: row;
+}
+
+textarea {
+  outline: none;
+  font-size: medium;
+}
+
+textarea::placeholder {
+  color: #d3d1cb;
+}
+
+.path-separation-bar {
+  margin-left: 2px;
+  margin-right: 2px;
+  color: rgba(55, 53, 47, 0.4);
+}
+
+.parent-path {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  font-size: 14px;
+  height: 100%;
+  flex-grow: 0;
+  margin-right: 8px;
+  min-width: 0px;
+}
+input {
+  border-style: none;
+  background-color: transparent;
+  outline: none;
+}
+
+input::placeholder {
+  color: #d3d1cb;
+}
+
+input[name="title"] {
+  width: 800px;
+  height: 50px;
+  border: none;
+  padding-top: 10px;
+  margin-bottom: 60px;
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+textarea[name="content"] {
+  width: 800px;
+  height: 600px;
+  border: none;
+}
+
+.btn {
+  height: 20px;
+  min-width: 10px;
+  border-radius: 4px;
+  outline: 0;
+  border-style: none;
+  cursor: pointer;
+}
+
+.btn-cyan {
+  background-color: rgb(247, 246, 243) !important;
+  border-color: rgb(247, 246, 243) !important;
+  color: #b5afaf;
+}
+
+.btn.btn-cyan:hover {
+  background-color: #edece9 !important;
+  color: gray;
+}
+
+.control-button {
+  flex-shrink: 0;
+}
+
+.add-button {
+  padding-top: 5px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.add-button:hover {
+  opacity: 1;
+}
+
+.add-button .add-button-text {
+  visibility: hidden;
+  width: 170px;
+  font-size: 5px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.add-button:hover .add-button-text {
+  visibility: visible;
+}
+
+button.document {
+  font-size: 13px;
+  padding: 5px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  width: 50%;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+button.document:hover {
+  color: #d3d1cb;
+}
+
+button.toggle {
+  font-size: 7px;
+  padding: 5px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  width: 10%;
+  text-align: left;
+  color: #adaba3;
+}
+
+button.toggle:hover {
+  color: #8a8881;
+}
+
+.remove-button {
+  padding-top: 5px;
+  font-weight: 700;
+  opacity: 0.5;
+}
+
+.remove-button:hover {
+  opacity: 1;
+}
+
+.remove-button .remove-button-text {
+  visibility: hidden;
+  width: 50px;
+  font-size: 5px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.remove-button:hover .remove-button-text {
+  visibility: visible;
+}
+
+.go-parent-document-button {
+  height: 20px;
+  min-width: 10px;
+  border-radius: 4px;
+  outline: 0;
+  border-style: none;
+  cursor: pointer;
+  background-color: white;
+  color: gray;
+}
+
+.go-parent-document-button:hover {
+  background-color: #edece9 !important;
+  color: gray;
+}
+form {
+  width: 200px;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.25s ease;
+  z-index: 2;
+}
+
+.modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-inner {
+  margin: 10px 10px 10px 10px;
+  float: left;
+  transition: top 0.25s ease;
+  max-width: 600px;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  position: relative;
+  padding: 15rem;
+}
+
+.modal-close {
+  margin: 20px;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+svg {
+  display: block;
+}
+
+.close-x {
+  stroke: gray;
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-inner {
+    width: 90%;
+    height: 90%;
+    box-sizing: border-box;
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3d1cb;
+}
+
+::-webkit-scrollbar-track {
+  background: #edece9;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation:
+    fadein 0.5s,
+    fadeout 0.5s 2.5s;
+  animation:
+    fadein 0.5s,
+    fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.triangle {
+  width: 0.6875em;
+  height: 0.6875em;
+  display: block;
+  fill: rgba(55, 53, 47, 0.4);
+  flex-shrink: 0;
+  backface-visibility: hidden;
+  transition: transform 200ms ease-out 0s;
+  transform: rotateZ(180deg);
+  opacity: 1;
+}
