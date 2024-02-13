@@ -1,4 +1,4 @@
-const { MongoClient, ObjectId } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 // const connectionURL = process.env.DB_URL;
 const connectionURL = `mongodb+srv://effysogood:effysode2024@cluster.07bvlxc.mongodb.net`;

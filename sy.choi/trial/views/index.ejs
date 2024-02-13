@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My Notes App</title>
+  <link rel="stylesheet" href="../../public/stylesheets/index.css">
+  <link rel="stylesheet" href="../../public/stylesheets/normalize.css">
+</head>
+
+<body>
+  <section class='side-bar'>
+    <h1>notion</h1>
+    <ul id="notes-list">
+      <% notes.forEach((note)=> { %>
+        <li>
+          <button class="toggle-button" onclick="toggleNoteChildren(this, '<%= note._id %>')">&#x25B6;</button>
+          <%= note.title %>
+            <% if (note.children && note.children.length> 0) { %>
+              <ul class="child-notes" id="child-<%= note._id %>">
+                <% note.children.forEach((childNote)=> { %>
+                  <li>
+                    <%= childNote.title %>
+                  </li>
+                  <% }) %>
+              </ul>
+              <% } %>
+        </li>
+        <% }) %>
+    </ul>
+  </section>
+  <section class='content-body'>
+
+  </section>
+  <script src='../main.js' type='module'></script>
+</body>
+
+</html>

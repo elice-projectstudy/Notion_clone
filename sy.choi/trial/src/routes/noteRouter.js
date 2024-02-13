@@ -1,7 +1,7 @@
 const express = require('express');
+const router = express.Router();
 const { ObjectId } = require('mongodb');
 const { getDB } = require('../database/db');
-const router = express.Router();
 const Note = require('../models/noteModel');
 
 router.post('/', async (req, res) => {
@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
     const newNote = req.body;
     await db.collection('notes').insertOne(newNote);
     res.redirect('/');
+    res.render('index');
   } catch (err) {
     console.error(`Error updatings:`, err);
   }
