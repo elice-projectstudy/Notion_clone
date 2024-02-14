@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Notion</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Notion</h1>
+        <div id="notionList"></div>
+      </header>
+      <div class="notionPage">
+        <input
+          type="text"
+          id="title"
+          class="titleInput"
+          placeholder="제목을 입력하세요"
+        />
+        <textarea
+          name="content"
+          id="content"
+          cols="30"
+          rows="10"
+          placeholder="내용을 입력하세요"
+        ></textarea>
+        <button id="saveBtn">Save</button>
+      </div>
+    </div>
+
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
