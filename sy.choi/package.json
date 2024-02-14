@@ -2,6 +2,7 @@
   "name": "notion-app-package",
   "version": "1.0.0",
   "description": "Server for notion app",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js"

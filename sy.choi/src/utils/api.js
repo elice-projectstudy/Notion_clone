@@ -1,24 +1,24 @@
-import { replace } from './router';
+import { replace } from './router.js';
 
-export const API_END_POINT = '';
+export const API_END_POINT = 'https://kdt.roto.codes';
 
-export const request = async(url, (options = {}), (username = 'saeyoung')) => {
+export const request = async (url, options = {}, username = 'saeyoung') => {
   try {
     const res = await fetch(`${API_END_POINT}${url}`, {
       ...options,
       headers: {
         'Content-Type': 'application/json',
-        'x-username' : username,
-      }
-    })
+        'x-username': username,
+      },
+    });
 
     if (res.ok) {
-      return await res.json()
+      return await res.json();
     }
 
-    throw new Error('API 처리 중 오류!')
+    throw new Error('API 처리중 뭔가 이상합니다!');
   } catch (e) {
-    console.error('error', e)
-    replace('/')
-  } 
+    alert(e);
+    replace('/');
+  }
 };

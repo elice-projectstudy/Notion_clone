@@ -19,6 +19,50 @@ export class Trie {
         currentNode.children[char] = new Node();
         currentNode.children[char].value = currentNode.value + char;
       }
+      currentNode = currentNode.children[char];
+      if (index === string.length - 1) {
+        currentNode.isTarget = true;
+      }
     });
   }
+
+  autocomplete(string) {
+    const result = [];
+    if (typeof string !== 'string' || !string) {
+      result.push(`검색어를 입력해주세요`);
+      return result;
+    }
+
+    let currentNode = this.root;
+
+    for (const char of string) {
+      if (!currentNode.children[char]) {
+        result.push(`'${string}'은 예상 검색어에 없습니다.`);
+        return result;
+      }
+      currentNode = currentNode.children[char];
+    }
+
+    const queue = [];
+    queue.push(currentNode);
+
+    while (queue.length) {
+      currentNode = queue.shift();
+      if (currentNode.isTarget) {
+        result.push(currentNode.value);
+      }
+
+      Object.keys(currentNode.children).forEach((key) => {
+        {
+          queue.push(currentNode.children[key]);
+        }
+      });
+    }
+
+    return result;
+  }
 }
+
+const trie = new Trie();
+trie.insert('cat');
+trie.autocomplete('cat');

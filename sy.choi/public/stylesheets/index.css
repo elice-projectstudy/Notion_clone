@@ -1,0 +1,251 @@
+#app {
+  display: flex;
+  background: #2f3437;
+  color: rgba(255, 255, 255, 0.9);
+  height: 100vh;
+  font-weight: 600;
+}
+
+#title {
+  margin-top: 46px;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background: rgb(55, 60, 63);
+}
+
+#logo-home {
+  margin: 30px 12px 12px 12px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background: url('/src/assets/logo.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 0;
+}
+
+#page {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 240px;
+}
+
+#document-list {
+  margin-top: 12px;
+  flex: 1;
+  overflow: auto;
+}
+
+#modal {
+  position: absolute;
+  top: 120px;
+  left: 250px;
+  width: 300px;
+  background: rgb(55, 60, 63);
+  padding: 16px;
+  border-radius: 0px 16px 16px 16px;
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.2);
+}
+
+#searchInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 0;
+  outline: none;
+  color: white;
+}
+
+#auto-completion-link {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  margin-bottom: 4px;
+  transition: all 100ms;
+}
+
+#auto-completion-link:hover {
+  color: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#button-group {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#button {
+  border-radius: 4px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 100ms;
+}
+
+#button button {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 16px;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+#button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(202, 204, 206, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #474c50;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5f6469;
+}
+.nav-top__button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-bottom__button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.document-list__ul {
+  margin-left: 6px;
+  padding: 0 0 0px 14px;
+  margin-bottom: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.document-list__item {
+  cursor: pointer;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.document-list__open-button {
+  margin-right: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  background: 0;
+  border: 0;
+}
+
+.document-list__item span {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 100ms;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.document-list__item span:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.document-list__item div {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.document-list__title {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.document-list__title span {
+  flex: 1;
+  padding-left: 14px;
+  font-size: 11.5px;
+}
+
+.document-list__add-button {
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: 0;
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  transition: all 100ms;
+  cursor: pointer;
+}
+
+.document-list__add-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.editor-title {
+  outline: none;
+  padding: 16px;
+  background: none;
+  border: 0;
+  width: 100%;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-content {
+  outline: none;
+  font-size: large;
+  font-weight: 500;
+  padding: 24px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-block;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+
+.editor-content:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.editor-content h1 {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-content h2 {
+  padding-bottom: 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-content h3 {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
