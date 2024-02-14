@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <header class="clickable">
+            <div>지원의 Notion</div>
+        </header>
+
+        <div class="pageList">
+            <!-- <div class="newList">
+                <div class="listTitle clickable">
+                    <div class="leftSide">
+                        <div class="toggle clickable">></div>
+                        <div class="listText">제목 없음</div>
+                    </div>
+                    <div class="rightSide">
+                        <div class="plusSubPage clickable">+</div>
+                        <div class="pageDelete clickable">–</div>
+                    </div>
+                </div>
+                <div class="SubPageList">
+                    <div class="listTitle clickable">
+                        <div class="leftSide">
+                            <div class="toggle clickable">></div>
+                            <div class="listText">제목 없음</div>
+                        </div>
+                        <div class="rightSide">
+                            <div class="plusSubPage clickable">+</div>
+                            <div class="pageDelete clickable">–</div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <section>
+            <div class="plusPage clickable">+ 페이지 추가</div>
+        </section>
+    </nav>
+
+    <div class="main">
+        <input type="text" class="titleInput" placeholder="제목 없음">
+        <textarea class="contentInput" placeholder="내용을 입력하세요"></textarea>
+    </div>
+</body>
+<script type="module" src="./src/newList.js"></script>
+<script type="module" src="./src/subList.js"></script>
+<script type="module" src="./src/loadList.js"></script>
+<script type="module" src="./src/saveData.js"></script>
+<script src="./src/toggle.js"></script>
+<script src="./src/Delete.js"></script>
+</html>
