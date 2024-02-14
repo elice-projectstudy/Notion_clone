@@ -13,7 +13,8 @@ textarea {
   outline: none;
   box-sizing: border-box;
   font-size: 1em;
-  padding: 0 0.4em;
+  padding: 0.4em;
+  margin-bottom: 1em;
 }
 
 .container {
@@ -120,8 +121,21 @@ i {
   padding: 2em 1em;
 }
 
-.titleInput {
+#title {
+  display: block;
   width: 100%;
   max-width: 400px;
   height: 40px;
+}
+
+#content {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+}
+
+#saveBtn {
+  border: 0;
+  height: 36px;
+  padding: 0 2em;
 }
